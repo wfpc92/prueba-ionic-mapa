@@ -69,7 +69,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 			}); 
 
 		marker.addListener('click', function() {
-			infoWindow.open(mapa, punto);
+			infoWindow.open(mapa, marker);
 		});
 
 		markers.push(marker);
@@ -131,7 +131,6 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
           optimizeWaypoints: true,
           travelMode: travelMode,//DRIVING, WALKING, BICYCLING, TRANSIT
         }, function(response, status) {
-        	console.log(status)
         	if (status === 'OK') {
           		station.ruta = response;
           	}
@@ -209,7 +208,6 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 						
 						if (station.puntos.length >= 2) {
 							var d = await calcularRuta(i, station);
-							console.log(d)
 							mostrarRuta(d.i, d.station);
 						}
 					}	
