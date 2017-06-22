@@ -1,0 +1,25 @@
+{
+  "name": "Mapa",
+  "app_id": "5bc43db8",
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ],
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://www.encicla.gov.co/"
+    }
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk-lite",
+      "version": "12.41.296.5"
+    }
+  ],
+  "gulpStartupTasks": [
+    "watch",
+    "sass"
+  ]
+}

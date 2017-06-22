@@ -1,0 +1,34 @@
+
+
+.transicionSwipeDerecha {
+	
+}
+
+.transicionSwipeIzquierda {
+
+}
+
+.terminosCondiciones {
+  text-decoration:underline;
+  color: blue;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+@-webkit-keyframes transicionSwipeDerecha {
+    to {
+        -webkit-transform: translateX(-100px);
+    }
+}
+
+@-webkit-keyframes transicionSwipeIzquierda {
+    to {
+        -webkit-transform: translateX(-100px);
+    }
+}

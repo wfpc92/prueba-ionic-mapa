@@ -1,0 +1,141 @@
+@font-face {
+	font-family: 'fira_sansmedium';
+	src: url('../fonts/firasans-medium-webfont.eot');
+	src: url('../fonts/firasans-medium-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/firasans-medium-webfont.woff2') format('woff2'),
+		 url('../fonts/firasans-medium-webfont.woff') format('woff'),
+		 url('../fonts/firasans-medium-webfont.ttf') format('truetype'),
+		 url('../fonts/firasans-medium-webfont.svg#fira_sansmedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'fira_sansregular';
+	src: url('../fonts/firasans-regular-webfont.eot');
+	src: url('../fonts/firasans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/firasans-regular-webfont.woff2') format('woff2'),
+		 url('../fonts/firasans-regular-webfont.woff') format('woff'),
+		 url('../fonts/firasans-regular-webfont.ttf') format('truetype'),
+		 url('../fonts/firasans-regular-webfont.svg#fira_sansregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:
+		url('../fonts/icomoon.ttf?nyjsog') format('truetype'),
+		url('../fonts/icomoon.woff?nyjsog') format('woff'),
+		url('../fonts/icomoon.svg?nyjsog#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="ico-"], [class*=" ico-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ico-home:before {
+	content: "\e90f";
+}
+.ico-perfil:before {
+	content: "\e900";
+}
+.ico-ordenes:before {
+	content: "\e901";
+}
+.ico-menu:before {
+	content: "\e902";
+}
+.ico-menos:before {
+	content: "\e903";
+}
+.ico-mas:before {
+	content: "\e904";
+}
+.ico-historial:before {
+	content: "\e905";
+}
+.ico-flechaizq:before {
+	content: "\e906";
+}
+.ico-flechader:before {
+	content: "\e907";
+}
+.ico-flechaabajo:before {
+	content: "\e908";
+}
+.ico-facebook:before {
+	content: "\e909";
+}
+.ico-checkbox .path1:before {
+	content: "\e90a";
+	color: rgb(0, 0, 0);
+}
+.ico-checkbox .path2:before {
+	content: "\e90b";
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+.ico-carrito:before {
+	content: "\e90c";
+}
+.ico-cerrar:before {
+	content: "\e90d";
+}
+.ico-about:before {
+	content: "\e90e";
+}
+
+@font-face {
+  font-family: 'iconos';
+  src:  url('../fonts/iconos.eot?77nh96');
+  src:  url('../fonts/iconos.eot?77nh96#iefix') format('embedded-opentype'),
+    url('../fonts/iconos.ttf?77nh96') format('truetype'),
+    url('../fonts/iconos.woff?77nh96') format('woff'),
+    url('../fonts/iconos.svg?77nh96#iconos') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'iconos' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pin:before {
+  content: "\e900";
+}
+.icon-cerrarterm:before {
+  content: "\e901";
+}
+.icon-checkorden .path1:before {
+  content: "\e902";
+  color: rgb(61, 160, 235);
+}
+.icon-checkorden .path2:before {
+  content: "\e903";
+  margin-left: -1.00390625em;
+  color: rgb(255, 255, 255);
+}
