@@ -54,8 +54,8 @@ var MapaCtrl = function($scope,
 		$scope.mapa.fachadaLineas();
 	};
 
-	$rootScope.rutaCicla = function() {
-		$scope.mapa.fachadaRutaCicla();
+	$rootScope.ruta = function(tipo) {
+		$scope.mapa.fachadaTravelMode(tipo);
 	};
 	
 	$scope.$on("$ionicView.beforeEnter", function () {
