@@ -4,6 +4,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 		elemMapa = null,
 		puntos = null,
 		stations = null,
+		markers= null,
 		directionsService = null,
 		directionsDisplays = null;
 
@@ -31,6 +32,8 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 
 		directionsService = new google.maps.DirectionsService;
         directionsDisplays = [];
+
+        markers = [];
 	};
 
 	var crearPunto = function(info, punto, color) {
@@ -39,9 +42,8 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 		    new google.maps.Point(0,0),
 		    new google.maps.Point(10, 34)),
 
-			punto = new google.maps.Marker({
+			marker = new google.maps.Marker({
 				position: new google.maps.LatLng(punto.lat, punto.lng),
-				map: mapa,
 				draggable: false,
 				icon: pinImage,
 				title: info.name
@@ -64,9 +66,23 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 				//disableAutoPan: true
 			}); 
 
-		punto.addListener('click', function() {
+		marker.addListener('click', function() {
 			infoWindow.open(mapa, punto);
 		});
+
+		markers.push(marker);
+	};
+
+	function mostrarMarkers() {
+		for (var i= 0; i < markers.length; i++) {
+			markers[i].setMap(mapa);
+		}
+	};
+
+	function ocultarMarkers() {
+		for (var i= 0; i < markers.length; i++) {
+			markers[i].setMap(null);
+		}
 	};
 
 	function mostrarRuta(i, station) {
@@ -77,7 +93,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 					strokeColor: "#"+station.color,
 					strokeWeight: 4,
 				},
-				suppressMarkers: true,
+				//suppressMarkers: true,
 			});
 			directionsDisplays[i].setMap(mapa);
 			directionsDisplays[i].setDirections(station.ruta);
@@ -88,7 +104,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 		if (typeof station.ruta !== 'undefined') {
 			directionsDisplays[i].setMap(null);
 		}
-	} 
+	};
 
 	function calcularRuta(info, puntos) {
         var waypts = [];
@@ -111,7 +127,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
           		info.ruta = response;
           	}
         });
-    }
+    };
 
 	var crearLinea = function(info, puntos, color) {
 		info.polilyne = new google.maps.Polyline({
@@ -156,6 +172,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 			},
 
 			fachadaLineas: function() {
+				mostrarMarkers();
 				for (var i = 0; i < stations.length; i++) {
 					var station = stations[i];
 					station.polilyne.setOptions({strokeOpacity:1});
@@ -170,6 +187,7 @@ var MapasFactory = function($q, $cordovaGeolocation, CargarScriptsFactory, $ioni
 			},
 
 			fachadaRutaCicla: function() {
+				ocultarMarkers();
 				for (var i = 0; i < stations.length; i++) {
 					var station = stations[i];
 					station.polilyne.setOptions({strokeOpacity:0});
