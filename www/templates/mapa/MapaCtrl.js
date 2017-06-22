@@ -49,6 +49,14 @@ var MapaCtrl = function($scope,
 	};
 
 	$scope.cargar();
+
+	$rootScope.lineas = function() {
+		$scope.mapa.fachadaLineas();
+	};
+
+	$rootScope.rutaCicla = function() {
+		$scope.mapa.fachadaRutaCicla();
+	};
 	
 	$scope.$on("$ionicView.beforeEnter", function () {
 		
