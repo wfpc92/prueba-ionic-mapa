@@ -1,0 +1,11 @@
+{
+  "name": "ionic2-native-maps",
+  "app_id": "",
+  "type": "ionic-angular",
+  "proxies": [
+  	{
+  		"path": "/api",
+		"proxyUrl": "http://www.encicla.gov.co/status"
+	}
+  ]
+}
