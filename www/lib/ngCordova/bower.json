@@ -23,7 +23,7 @@
   ],
   "dependencies": {
     "angular": ">= 1.2.23",
-    "facebook-connect-plugin": "https://cdn.rawgit.com/Wizcorp/phonegap-facebook-plugin/master/facebookConnectPlugin.js"
+    "facebook-connect-plugin": "https://cdn.jsdelivr.net/gh/Wizcorp/phonegap-facebook-plugin@master/facebookConnectPlugin.js"
   },
   "keywords": [
     "ngCordova",
